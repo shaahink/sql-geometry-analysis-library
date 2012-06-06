@@ -1,5 +1,0 @@
-D:\Work\BSUIR\Dissertation\GraphsAnalysisFunctions\GraphsAnalysisFunctions\bin\Debug\GraphsAnalysisFunctions.dll
-D:\Work\BSUIR\Dissertation\GraphsAnalysisFunctions\GraphsAnalysisFunctions\bin\Debug\GraphsAnalysisFunctions.pdb
-D:\Work\BSUIR\Dissertation\GraphsAnalysisFunctions\GraphsAnalysisFunctions\obj\Debug\ResolveAssemblyReference.cache
-D:\Work\BSUIR\Dissertation\GraphsAnalysisFunctions\GraphsAnalysisFunctions\obj\Debug\GraphsAnalysisFunctions.dll
-D:\Work\BSUIR\Dissertation\GraphsAnalysisFunctions\GraphsAnalysisFunctions\obj\Debug\GraphsAnalysisFunctions.pdb
