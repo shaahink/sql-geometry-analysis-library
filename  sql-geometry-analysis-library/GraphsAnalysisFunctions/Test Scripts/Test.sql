@@ -31,5 +31,8 @@
 -- select dbo.AggregateName(Column1) from Table1
 
 
-select dbo.TopBorder(dbo.UnionAggregate(graph)) from Graphs
-where id in (4, 5, 6)
+DECLARE @source geometry, @average geometry, @top geometry, @bottom geometry;
+select @source = dbo.UnionAggregate(graph) from Graphs
+where id between 6 and 9;
+set @average = dbo.AverageGraph(@source);
+select @average;
