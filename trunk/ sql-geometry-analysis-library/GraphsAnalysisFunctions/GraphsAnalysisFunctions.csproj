@@ -51,8 +51,10 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnalysisType.cs" />
     <Compile Include="AverageGraph.cs" />
     <Compile Include="BottomBorder.cs" />
+    <Compile Include="CoreAnalysis.cs" />
     <Compile Include="EnvelopeAgg.cs" />
     <Compile Include="OuterBorder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
