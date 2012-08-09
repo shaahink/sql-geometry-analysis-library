@@ -51,6 +51,7 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdjacencyPolygon.cs" />
     <Compile Include="AnalysisType.cs" />
     <Compile Include="AverageGraph.cs" />
     <Compile Include="BottomBorder.cs" />

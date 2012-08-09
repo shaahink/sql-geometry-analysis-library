@@ -31,8 +31,5 @@
 -- select dbo.AggregateName(Column1) from Table1
 
 
-DECLARE @source geometry, @average geometry, @top geometry, @bottom geometry;
-select @source = dbo.UnionAggregate(graph) from Graphs
-where id between 6 and 9;
-set @average = dbo.AverageGraph(@source);
-select @average;
+SELECT dbo.AdjacencyPolygon(graph, 0.2).ToString() from Graphs where id =6
+--select dbo.AdjacencyPolygon(geometry::STGeomFromText('LINESTRING(0 0, 1 0)', 0), 1);

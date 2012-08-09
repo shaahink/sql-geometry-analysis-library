@@ -54,7 +54,7 @@ public struct AnalysisTypeEnum : INullable
 
     public enum AnalysisType
     {
-        Outer = 0, Top = 1, Bottom = 2, Average = 3
+        Outer = 0, Top = 1, Bottom = 2, Average = 3, Adjacency=4
     }
 
     public int value;
