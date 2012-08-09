@@ -9,7 +9,7 @@ public partial class UserDefinedFunctions
 {
     
     [Microsoft.SqlServer.Server.SqlFunction]
-    public static SqlGeometry CoreAnalysis(SqlGeometry sourceGraph, AnalysisTypeEnum type)
+    public static SqlGeometry CoreAnalysis(SqlGeometry sourceGraph, AnalysisTypeEnum type, float deviation = 1)
     {
         SqlGeometry polygonsUnion = new SqlGeometry();
         SqlGeometry result = new SqlGeometry();
@@ -21,10 +21,13 @@ public partial class UserDefinedFunctions
         SqlGeometry envelope = sourceGraph.STEnvelope();
         minY = envelope.STPointN(1).STY.Value;
         maxY = envelope.STPointN(3).STY.Value;
+        //SqlGeometry verticalLineSample = envelope.STPointN(2).STUnion(envelope.STPointN(3)).STConvexHull();
         for (int i = 1; i <= dotQty; i++)
         {
             SqlGeometry currentDot = sourceGraph.STPointN(i);
             SqlGeometry verticalLine = SqlGeometry.Parse(String.Format("LINESTRING({0} {1}, {0} {2})", currentDot.STX.Value.ToString("#0.000000").Replace(",", "."), minY.ToString("#0.000000").Replace(",", "."), maxY.ToString("#0.000000").Replace(",", ".")));
+            //SqlGeometry rectangle = verticalLineSample.STUnion(currentDot).STConvexHull().STEnvelope();
+            //SqlGeometry verticalLine = rectangle.STPointN(1).STUnion(rectangle.STPointN(4)).STConvexHull();
             SqlGeometry intersection = sourceGraph.STIntersection(verticalLine).STEnvelope();
             SqlGeometry borderDot = intersection.STPointN(1);
             try
@@ -69,8 +72,29 @@ public partial class UserDefinedFunctions
                 {
                     polygonsUnion = polygonsUnion.STUnion(intersection);
                 }
+                if (type.TypeValue() == AnalysisTypeEnum.AnalysisType.Adjacency && borderDot.IsNull==false)
+                {
+                    double xValue = borderDot.STX.Value;
+                    double yMax = borderDot.STY.Value;
+                    double yMin = borderDot.STY.Value;
+                    for (int j = 2; j <= (int)intersection.STNumPoints(); j++)
+                    {
+                        if (intersection.STPointN(j).STY.Value > yMax)
+                            yMax = borderDot.STY.Value;
+                        if (intersection.STPointN(j).STY.Value < yMin)
+                            yMin = borderDot.STY.Value;
+                    }
+                    yMin = yMin - deviation;
+                    yMax = yMax + deviation;
+                    string lineSource = String.Format("LINESTRING({0} {1}, {0} {2})", xValue.ToString("#0.000000").Replace(",", "."), yMin.ToString("#0.000000").Replace(",", "."), yMax.ToString("#0.000000").Replace(",", "."));
+                    SqlGeometry AdjacencyLine = SqlGeometry.Parse(lineSource);
+                    polygonsUnion = polygonsUnion.STUnion(AdjacencyLine);
+                }
             }
-            catch { }
+            catch (Exception ex) 
+            {
+                string s = ex.ToString();
+            }
                 
         }
         int polygonsQty = (int)polygonsUnion.STNumGeometries();
