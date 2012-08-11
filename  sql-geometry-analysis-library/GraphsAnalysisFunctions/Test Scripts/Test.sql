@@ -31,5 +31,8 @@
 -- select dbo.AggregateName(Column1) from Table1
 
 
-SELECT dbo.AdjacencyPolygon(graph, 0.2).ToString() from Graphs where id =6
+--SELECT dbo.AdjacencyPolygon(graph, 0.2).ToString() from Graphs where id =6
 --select dbo.AdjacencyPolygon(geometry::STGeomFromText('LINESTRING(0 0, 1 0)', 0), 1);
+select dbo.SimilarityDegree(g1.graph, g2.graph, 0.2)
+from Graphs g1, Graphs g2
+where g1.id =6 and g2.id = 7
