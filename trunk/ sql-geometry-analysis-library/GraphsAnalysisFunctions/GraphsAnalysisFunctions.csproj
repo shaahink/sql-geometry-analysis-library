@@ -59,6 +59,7 @@
     <Compile Include="EnvelopeAgg.cs" />
     <Compile Include="OuterBorder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimilarityDegree.cs" />
     <Compile Include="TopBorder.cs" />
     <Compile Include="UnionAggregate.cs" />
   </ItemGroup>
