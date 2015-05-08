@@ -1,0 +1,1 @@
+Library of SQL CLR functions to analyse mathematical graphics stored as SQL geometry
