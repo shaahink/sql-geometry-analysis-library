@@ -18,7 +18,9 @@
     {
         var video = document.getElementById('video');
         var hls = new Hls();
-        hls.loadSource('http://sa23.telewebion.com:1935/devices/_definst_/tv3-1000k.stream/chunklist_w1187929583.m3u8');
+        //hls.loadSource('http://sa23.telewebion.com:1935/devices/_definst_/tv3-1000k.stream/chunklist_w1187929583.m3u8');
+        hls.loadSource('http://s1.live.cdn.tvnet.ir/live/VARZESH/720_.m3u8');
+        
         hls.attachMedia(video);
         hls.on(Hls.Events.MANIFEST_PARSED,function()
         {
@@ -27,7 +29,8 @@
     }
     else if (video.canPlayType('application/vnd.apple.mpegurl'))
     {
-        video.src = 'http://sa23.telewebion.com:1935/devices/_definst_/tv3-1000k.stream/chunklist_w1187929583.m3u8';
+        video.src = 'http://s1.live.cdn.tvnet.ir/live/VARZESH/720_.m3u8';
+        //video.src = 'http://sa23.telewebion.com:1935/devices/_definst_/tv3-1000k.stream/chunklist_w1187929583.m3u8';
         video.addEventListener('canplay',function()
         {
             video.play();
