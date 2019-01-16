@@ -17,8 +17,7 @@
         var video = document.getElementById('video');
         var hls = new Hls();
         //hls.loadSource('http://sa23.telewebion.com:1935/devices/_definst_/tv3-1000k.stream/chunklist_w1187929583.m3u8');
-        hls.loadSource('http://sl14.telewebion.com:1935/devices/_definst_/tv3-1000k.stream/chunklist_w217641383.m3u8?wmsAuthSign=aXNfZnJlZT0xJnNlcnZlcl90aW1lPTEvMTYvMjAxOSAzOjI0OjQzIFBNJmhhc2hfdmFsdWU9cVBHa0l3ejJ2d0k2VWUxNE5xbC84dz09JnZhbGlkbWludXRlcz02MDAw');
-        
+        hls.loadSource('https://sa3.telewebion.com/devices/_definst_/tv3-300k.stream/chunklist_w1995644047.m3u8?wmsAuthSign=aXNfZnJlZT0xJnNlcnZlcl90aW1lPTEvMTYvMjAxOSAzOjI0OjQzIFBNJmhhc2hfdmFsdWU9cVBHa0l3ejJ2d0k2VWUxNE5xbC84dz09JnZhbGlkbWludXRlcz02MDAw');
         hls.attachMedia(video);
         hls.on(Hls.Events.MANIFEST_PARSED,function()
         {
@@ -27,8 +26,7 @@
     }
     else if (video.canPlayType('application/vnd.apple.mpegurl'))
     {
-        video.src = 'http://sl14.telewebion.com:1935/devices/_definst_/tv3-1000k.stream/chunklist_w217641383.m3u8?wmsAuthSign=aXNfZnJlZT0xJnNlcnZlcl90aW1lPTEvMTYvMjAxOSAzOjI0OjQzIFBNJmhhc2hfdmFsdWU9cVBHa0l3ejJ2d0k2VWUxNE5xbC84dz09JnZhbGlkbWludXRlcz02MDAw';
-        //video.src = 'http://sa23.telewebion.com:1935/devices/_definst_/tv3-1000k.stream/chunklist_w1187929583.m3u8';
+        video.src = 'https://sa3.telewebion.com/devices/_definst_/tv3-300k.stream/chunklist_w1995644047.m3u8?wmsAuthSign=aXNfZnJlZT0xJnNlcnZlcl90aW1lPTEvMTYvMjAxOSAzOjI0OjQzIFBNJmhhc2hfdmFsdWU9cVBHa0l3ejJ2d0k2VWUxNE5xbC84dz09JnZhbGlkbWludXRlcz02MDAw';
         video.addEventListener('canplay',function()
         {
             video.play();
