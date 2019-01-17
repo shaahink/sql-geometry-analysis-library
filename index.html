@@ -1,85 +1,84 @@
 <html>
-    <head>
-            <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
 
-.row {
-  display: flex;
-}
+      .row {
+        display: flex;
+      }
 
-/* Create two equal columns that sits next to each other */
-.column {
-  flex: 50%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
-}
-</style>
-
-    </head>
+      /* Create two equal columns that sits next to each other */
+      .column {
+        flex: 50%;
+        padding: 10px;
+        height: 300px; /* Should be removed. Only for demonstration */
+      }
+    </style>
+  </head>
   <body>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    <marquee>
-        سلام عشقم
-    </marquee>
-    <h1>
-        Live IRIB 3 HD
-        
-    </h1>
-    <h4>
-        خارج از ایران
-    </h4>
-    <hr>
+    <marquee> سلام عشقم </marquee>
+    <h1>Live IRIB 3 HD - Live Varzesh TV HD</h1>
+    <h4>خارج از ایران</h4>
+    <hr />
     <div class="row">
-        <div class="column">
-            <video id="video" controls></video>
+      <div class="column"><video id="video1" controls></video></div>
+      <div class="column"><video id="video2" controls></video></div>
+    </div>
 
-        </div>
-        <div class="column">
-            <img src="ali.JPG" alt="Smiley face" height="400" width="700"> 
-          تقدیم به کاکام
-        </div>
-      </div>
-      
     <script>
-    if(Hls.isSupported())
-    {
-        var video = document.getElementById('video');
-        var hls = new Hls();
-        hls.loadSource('http://sa23.telewebion.com:1935/devices/_definst_/tv3-1000k.stream/chunklist_w1187929583.m3u8');
-        hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED,function()
-        {
+      function load(id, url) {
+        if (Hls.isSupported()) {
+          var video = document.getElementById(id);
+          var hls = new Hls();
+          hls.loadSource(url);
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, function() {
             video.play();
-        });
-    }
-    else if (video.canPlayType('application/vnd.apple.mpegurl'))
-    {
-        video.src = 'http://sa23.telewebion.com:1935/devices/_definst_/tv3-1000k.stream/chunklist_w1187929583.m3u8';
-        video.addEventListener('canplay',function()
-        {
+          });
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+          video.src = url;
+          video.addEventListener('canplay', function() {
             video.play();
-        });
-    }
+          });
+        }
+      }
+      load(
+        'video1',
+        'http://sa23.telewebion.com:1935/devices/_definst_/tv3-1000k.stream/chunklist_w1187929583.m3u8'
+      );
+      load(
+        'video2',
+        'http://sa19.telewebion.com:1935/devices/_definst_/varzesh-1000k.stream/playlist.m3u8'
+      );
     </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132705553-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-132705553-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
 
-  gtag('config', 'UA-132705553-1');
-</script>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-3641774072287842",
-    enable_page_level_ads: true
-  });
-</script>
+      gtag('config', 'UA-132705553-1');
+    </script>
+    <script
+      async
+      src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    ></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: 'ca-pub-3641774072287842',
+        enable_page_level_ads: true
+      });
+    </script>
   </body>
 </html>
