@@ -16,7 +16,11 @@
       .column {
         flex: 50%;
         padding: 10px;
-        height: 300px; /* Should be removed. Only for demonstration */
+   
+      }
+      .full-col{
+        flex: 100%;
+        padding: 10px;
       }
     </style>
   </head>
@@ -26,9 +30,14 @@
     <h1>Live IRIB 3 HD - Live Varzesh TV HD</h1>
     <h4>خارج از ایران</h4>
     <div class="row">
-      <div class="column"><video id="video1" controls></video></div>
-      <div class="column"><video id="video2" controls></video></div>
+      <div class="column">کانال سه<video id="video1" controls></video></div>
+      <div class="column">شبکه ورزش<video id="video2" controls></video></div>
     </div>
+    <div class="row">
+
+    <div class="full-col">هره لییی<video id="video3" controls></video></div>
+  </div>
+
     <hr>
     <div style="padding-top: 200px;">
       <br>
@@ -45,12 +54,12 @@
           hls.loadSource(url);
           hls.attachMedia(video);
           hls.on(Hls.Events.MANIFEST_PARSED, function() {
-            video.play();
+            //video.play();
           });
         } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
           video.src = url;
           video.addEventListener('canplay', function() {
-            video.play();
+          //  video.play();
           });
         }
       }
@@ -62,6 +71,9 @@
         'video2',
         'http://sa19.telewebion.com:1935/devices/_definst_/varzesh-1000k.stream/playlist.m3u8'
       );
+      load('video3',
+      'https://stream6.cdn.asset.filimo.com/filimo-video/154794335477718494/1548000955/ccd415ed95ba04263e0f315a56324fe287015aa8/6048-400k.mp4/chunk.m3u8?wmsAuthSign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6IjVjNDI2ZjM0NTQ2ODU5NGFhNDhlZDk1YWFmZWFjNzRlIiwiZXhwIjoxNTQ4MDAwOTU1LCJpc3MiOiJTYWJhIElkZWEgR1NJRyJ9.rY55UYBCsupp__p8Fhlalfe9HDckbHkP7fPXEOquU88'
+      )
     </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
