@@ -2,7 +2,10 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="google-site-verification" content="o_8y4UvooJceUCILhKHNcul3tLVoLLTaAewck-kcaNk" />
+    <meta
+      name="google-site-verification"
+      content="o_8y4UvooJceUCILhKHNcul3tLVoLLTaAewck-kcaNk"
+    />
     <style>
       * {
         box-sizing: border-box;
@@ -16,9 +19,8 @@
       .column {
         flex: 50%;
         padding: 10px;
-   
       }
-      .full-col{
+      .full-col {
         flex: 100%;
         padding: 10px;
       }
@@ -33,17 +35,27 @@
       <div class="column">کانال سه<video id="video1" controls></video></div>
       <div class="column">شبکه ورزش<video id="video2" controls></video></div>
     </div>
+
     <div class="row">
+      <div class="column">
+        ساسک:
+        <a
+          class="twitter-timeline"
+          href="https://twitter.com/SasanM89?ref_src=twsrc%5Etfw"
+          >Tweets by SasanM89</a
+        >
+        <script
+          async
+          src="https://platform.twitter.com/widgets.js"
+          charset="utf-8"
+        ></script>
+      </div>
+    </div>
 
-    <div class="full-col">هره لییی<video id="video3" controls></video></div>
-  </div>
-
-    <hr>
+    <hr />
     <div style="padding-top: 200px;">
-      <br>
-      <br>
-      
-
+      <br />
+      <br />
     </div>
 
     <script>
@@ -59,7 +71,7 @@
         } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
           video.src = url;
           video.addEventListener('canplay', function() {
-          //  video.play();
+            //  video.play();
           });
         }
       }
@@ -71,10 +83,9 @@
         'video2',
         'http://sa19.telewebion.com:1935/devices/_definst_/varzesh-1000k.stream/playlist.m3u8'
       );
-      load('video3',
-      'https://stream6.cdn.asset.filimo.com/filimo-video/154794335477718494/1548000955/ccd415ed95ba04263e0f315a56324fe287015aa8/6048-400k.mp4/chunk.m3u8?wmsAuthSign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6IjVjNDI2ZjM0NTQ2ODU5NGFhNDhlZDk1YWFmZWFjNzRlIiwiZXhwIjoxNTQ4MDAwOTU1LCJpc3MiOiJTYWJhIElkZWEgR1NJRyJ9.rY55UYBCsupp__p8Fhlalfe9HDckbHkP7fPXEOquU88'
-      )
+  
     </script>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
       async
@@ -89,14 +100,16 @@
 
       gtag('config', 'UA-132705553-1');
     </script>
- 
- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-3641774072287842",
-    enable_page_level_ads: true
-  });
-</script>
 
+    <script
+      async
+      src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    ></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: 'ca-pub-3641774072287842',
+        enable_page_level_ads: true
+      });
+    </script>
   </body>
 </html>
