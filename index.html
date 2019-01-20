@@ -20,8 +20,17 @@
 
     <div class="padding">
       <div class="columns">
-        <div class="column"><video id="video1" controls></video></div>
-        <div class="column"><video id="video2" controls></video></div>
+        <div class="column">
+        <h2>
+          ساسان بیلاخ
+        </h2>
+        
+        </div>
+        <div class="column">
+          <h3>
+              لینک زنده شه ها آشو لاش
+          </h3>
+        </div>
         <div class="column">
     <h4 class="subtitle">Radio varzesh</h2>
           
@@ -68,9 +77,10 @@
           var hls = new Hls();
           hls.loadSource(url);
           hls.attachMedia(video);
-          hls.on(Hls.Events.MANIFEST_PARSED, function() {
-            //video.play();
-          });
+          hls.stopLoad();
+          // hls.on(Hls.Events.MANIFEST_PARSED, function() {
+          //   //video.play();
+          // });
         } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
           video.src = url;
           video.addEventListener('canplay', function() {
