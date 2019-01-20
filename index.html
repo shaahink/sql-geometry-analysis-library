@@ -6,51 +6,68 @@
       name="google-site-verification"
       content="o_8y4UvooJceUCILhKHNcul3tLVoLLTaAewck-kcaNk"
     />
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-
-      .row {
-        display: flex;
-      }
-
-      /* Create two equal columns that sits next to each other */
-      .column {
-        flex: 50%;
-        padding: 10px;
-      }
-      .full-col {
-        flex: 100%;
-        padding: 10px;
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   </head>
   <body>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    <marquee> سلام عشقم </marquee>
-    <h1>Live IRIB 3 HD - Live Varzesh TV HD</h1>
-    <h4>خارج از ایران</h4>
-    <div class="row">
-      <div class="column">کانال سه<video id="video1" controls></video></div>
-      <div class="column">شبکه ورزش<video id="video2" controls></video></div>
-    </div>
+    <marquee> کاکا بازی </marquee>
+    <h2 class="title">Live IRIB 3 HD - Live Varzesh TV HD</h2>
+    <h2 class="subtitle">Iran Live Sport</h2>
 
-    <div class="row">
-      <div class="column">
-          <a class="twitter-timeline" href="https://twitter.com/SasanM89?ref_src=twsrc%5Etfw">Tweets by SasanM89</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
-      </div>
-      <div class="column">
-<!-- Start varzesh3.com livescore code -->
-<script src="https://www.varzesh3.com/livescore/frame?width=700&height=600" type="text/javascript" language="javascript"></script>
-<!-- End varzesh3.com livescore code -->
+    <div class="padding">
+      <div class="columns">
+        <div class="column"><video id="video1" controls></video></div>
+        <div class="column"><video id="video2" controls></video></div>
+        <div class="column">
+    <h4 class="subtitle">Radio varzesh</h2>
+          
+          <video id="video3" controls></video></div>
+    
       </div>
     </div>
 
-    <hr />
-    <div style="padding-top: 200px;">
-      <br />
-      <br />
+    <div class="columns">
+      <div class="column">
+          <iframe width="100%" height="600" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/219568688&color=%23ccc0b2&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+ 
+      </div>
+      <div class="column">
+        <a
+          class="twitter-timeline"
+          data-heigh="500"
+          href="https://twitter.com/tarafdari_com?ref_src=twsrc%5Etfw"
+          >Tweets by tarafdari_com</a
+        >
+        <script
+          async
+          src="https://platform.twitter.com/widgets.js"
+          charset="utf-8"
+        ></script>
+      </div>
+      <div class="column">
+        <a
+          class="twitter-timeline"
+          data-heigh="500"
+          href="https://twitter.com/SasanM89?ref_src=twsrc%5Etfw"
+          >ساسی گفت:</a
+        >
+        <script
+          async
+          src="https://platform.twitter.com/widgets.js"
+          charset="utf-8"
+        ></script>
+      </div>
+      <div class="column">
+        <script
+          src="https://www.varzesh3.com/livescore/frame?width=700&height=600"
+          type="text/javascript"
+          language="javascript"
+        ></script>
+      </div>
     </div>
 
     <script>
@@ -78,6 +95,8 @@
         'video2',
         'http://sa19.telewebion.com:1935/devices/_definst_/varzesh-1000k.stream/playlist.m3u8'
       );
+      load('video3',
+      ' http://s0.cdn1.iranseda.ir:1935/liveedge/radio-varzesh/chunklist_w1834342275.m3u8')
     </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
