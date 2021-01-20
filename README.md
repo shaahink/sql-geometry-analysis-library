@@ -1,3 +1,4 @@
 # kakaha
 
-[Mahdi](mahdiarabpour.github.io/)
+
+Or leave it empty and use the [mahdiarabpour.github.io/].
