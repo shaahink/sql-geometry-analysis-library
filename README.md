@@ -1,4 +1,2 @@
-# kakaha
 
-
-Or leave it empty and use the [mahdiarabpour.github.io/]
+It's very easy to make some words **bold** and other words *italic* with Markdown. You can even [link to Google!](https://mahdiarabpour.github.io)
